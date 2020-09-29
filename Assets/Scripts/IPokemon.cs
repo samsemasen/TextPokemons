@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class IPokemon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int health;
+
+    public void Attack()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AttackChoose()
     {
-        
+
     }
 }

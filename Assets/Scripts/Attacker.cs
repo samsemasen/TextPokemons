@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-	private readonly charmenderAttacks _attackType;
+	private readonly charmanderAttacks _attackType;
 
-	public Attacker(charmenderAttacks attackType)
+	public Attacker(charmanderAttacks attackType)
 	{
 		_attackType = attackType;
 	}
 
 	public void Attack()
 	{
+		Debug.Log("in attack");
 		Debug.Log("attack " + _attackType);
 	}
 }
-
-enum charmenderAttacks
+public enum charmanderAttacks
 {
 	FireBlast,
 	Slash,
