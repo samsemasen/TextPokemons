@@ -6,12 +6,17 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public Charmander charmi;
-  
 
-    public void GetInput(int num)
+    public int choice;
+  
+    public void SetChoice(int num)
     {
-        charmi.AttackChoose(num);
-        charmi.Attack();
-        Debug.Log("choose charmander attack");
+        choice = num;
     }
+
+    public int GetChoice()
+    {
+        return choice;
+    }
+
 }

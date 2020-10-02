@@ -3,19 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Charmander 
+public class Charmander : Pokemon
 {
-
-    public Attacker _attacker;
-    public InputManager choice;
-
-    private charmanderAttacks attackChoice;
-
-
-    public void Attack()
-    {
-        Debug.Log("attack " + attackChoice);
-    }
+    private charmanderAttacks _attackChoice;
+    
+    public InputManager input;
 
     public enum charmanderAttacks
     {
@@ -25,21 +17,13 @@ public class Charmander
         FireStorm
     }
 
-    public void AttackChoose(int num)
+    public void Charmie()
     {
-        switch (num) {
-            case 1: attackChoice = charmanderAttacks.FireBlast; break;
-            case 2: attackChoice = charmanderAttacks.FireStorm; break;
-            case 3: attackChoice = charmanderAttacks.Slash; break;
-            case 4: attackChoice = charmanderAttacks.WingAttack; break;
-            default: throw new ArgumentException("Incorrect Charmander Attack");
-        }
+        Debug.Log("choose charmander attack");
+        int choice = input.GetChoice();
+        _attackChoice = AttackChoose(choice, charmanderAttacks.FireBlast, charmanderAttacks.FireStorm, charmanderAttacks.Slash, charmanderAttacks.WingAttack);
+        Attack(_attackChoice);
 
     }
-
-    private void Start()
-    {
-        //AttackChoose(3);
-       // Attack();
-    }
+    
 }

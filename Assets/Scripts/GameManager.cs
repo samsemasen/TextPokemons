@@ -5,9 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Charmander charmi;
+    public InputManager input;
     private void Start()
     {
-        Debug.Log("choose charmander attack");
+        
+
+        if(input.GetChoice() != null)
+            {
+            Debug.Log("choose pokemons");
+            charmi.Charmie();
+        }
     }
 
 

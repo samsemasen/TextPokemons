@@ -193,6 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b458b13b605b64790fb1d15b311f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charmi: {fileID: 1698504732}
+  choice: 0
 --- !u!4 &330404019
 Transform:
   m_ObjectHideFlags: 0
@@ -530,7 +532,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 678669741}
-        m_MethodName: GetInput
+        m_MethodName: SetChoice
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -589,6 +591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b458b13b605b64790fb1d15b311f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charmi: {fileID: 1698504732}
+  choice: 0
 --- !u!1 &687469147
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +755,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 697475397}
-        m_MethodName: GetInput
+        m_MethodName: SetChoice
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -810,6 +814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b458b13b605b64790fb1d15b311f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charmi: {fileID: 1698504732}
+  choice: 0
 --- !u!1 &783191264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,8 +1142,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1674487162}
-        m_MethodName: GetInput
+      - m_Target: {fileID: 697475397}
+        m_MethodName: SetChoice
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1196,6 +1202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b458b13b605b64790fb1d15b311f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charmi: {fileID: 1698504732}
+  choice: 0
 --- !u!1 &1674766935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a23171eb3e6aeb4a96f1c6d6e3e94d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charmi: {fileID: 1698504732}
+  input: {fileID: 330404018}
 --- !u!4 &1674766937
 Transform:
   m_ObjectHideFlags: 0
@@ -1282,10 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be121e3f463f947ab4bffe1e7fef6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  _attacker: {fileID: 23782093}
-  choice: {fileID: 330404018}
-  attackChoice: 0
+  input: {fileID: 330404018}
 --- !u!1 &1720217103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,8 +1454,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2065795519}
-        m_MethodName: GetInput
+      - m_Target: {fileID: 697475397}
+        m_MethodName: SetChoice
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1507,3 +1514,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b458b13b605b64790fb1d15b311f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charmi: {fileID: 1698504732}
+  choice: 0
