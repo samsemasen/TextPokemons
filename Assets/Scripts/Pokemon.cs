@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Pokemon : MonoBehaviour
 {
+    public bool isAI_Pokemon;
     public void Attack<T>(T attackChoice)
     {
         Debug.Log("attack " + attackChoice);
@@ -23,4 +24,8 @@ public abstract class Pokemon : MonoBehaviour
         
     }
 
+    public T SetAttacks<T>(T attack1, T attack2, T attack3, T attack4)
+    {
+
+    }
 }
