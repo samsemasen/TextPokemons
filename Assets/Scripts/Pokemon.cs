@@ -24,8 +24,8 @@ public abstract class Pokemon : MonoBehaviour
         
     }
 
-    public T SetAttacks<T>(T attack1, T attack2, T attack3, T attack4)
+    /*public T SetAttacks<T>(T attack1, T attack2, T attack3, T attack4)
     {
 
-    }
+    }*/
 }

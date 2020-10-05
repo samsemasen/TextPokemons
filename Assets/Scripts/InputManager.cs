@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
 
-    public static int choice = 1;
+    public static int choice ;
     public static bool clicked = false;
 
     public void SetChoice(int num)

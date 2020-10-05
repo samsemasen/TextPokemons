@@ -7,30 +7,40 @@ public class GameManager : MonoBehaviour
     public Charmander charmi;
     public Pikachu pika;
     public InputManager input;
+    private PokemonTypes chosen;
+
+    public enum PokemonTypes
+    {
+        Pikachu ,
+        Charmender,
+        Bulbasaur,
+        Squirtle
+
+    }
 
     private void Start()
     {
         Debug.Log("choose pokemon");
-        //Pokemon chosen = input.Choose(pika, pika, charmi, charmi);
-
-
-        Debug.Log("choose attack");
+        if (InputManager.clicked) {
+            chosen = input.Choose(PokemonTypes.Pikachu, PokemonTypes.Charmender, PokemonTypes.Bulbasaur, PokemonTypes.Squirtle);
+            Debug.Log("you choose" + chosen);
+            Debug.Log("choose attack");
+        }
+       
     }
 
     private void Update()
     {
-        if (InputManager.clicked) {           
-            //charmi.Charmie();
-            pika.Pika();
+        if (InputManager.clicked) {
+            if (chosen == PokemonTypes.Pikachu) {
+                pika.Pika();
+            }else if (chosen == PokemonTypes.Charmender) {
+                charmi.Charmie();
+            }
+
             Debug.Log("choose attack");
             InputManager.clicked = false;
         }
 
     }
 }
-
-
-//walk 
-// have chance to see a pokemon
-// have fight
-// win or die
