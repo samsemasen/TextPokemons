@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Pikachu : Pokemon
 {
+    public InputManager input;
     private PikatchuAttacks _attackChoice;
+
 
     public enum PikatchuAttacks
     {
@@ -16,7 +18,7 @@ public class Pikachu : Pokemon
 
     public void Pika()
     {
-        _attackChoice = AttackChoose(InputManager.choice, PikatchuAttacks.Growl,PikatchuAttacks.ThunderShock,PikatchuAttacks.TailWhip, PikatchuAttacks.Slam);
+        _attackChoice = input.Choose( PikatchuAttacks.Growl, PikatchuAttacks.ThunderShock, PikatchuAttacks.TailWhip, PikatchuAttacks.Slam);
         Attack(_attackChoice);
     }
 }

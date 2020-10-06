@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class Charmander : Pokemon
 {
+    public InputManager input;
     private charmanderAttacks _attackChoice;
 
-    public InputManager input;
-    
     public enum charmanderAttacks
     {
         FireBlast,
@@ -19,10 +18,8 @@ public class Charmander : Pokemon
 
     public void Charmie()
     {
-        _attackChoice = AttackChoose(InputManager.choice, charmanderAttacks.FireBlast, charmanderAttacks.FireStorm, charmanderAttacks.Slash, charmanderAttacks.WingAttack);
+        _attackChoice = input.Choose(charmanderAttacks.FireBlast, charmanderAttacks.FireStorm, charmanderAttacks.Slash, charmanderAttacks.WingAttack);
         Attack(_attackChoice);
-
-        input.Choose(charmanderAttacks.FireBlast, charmanderAttacks.FireStorm, charmanderAttacks.Slash, charmanderAttacks.WingAttack);
 
     }   
 }

@@ -15,11 +15,6 @@ public class InputManager : MonoBehaviour
         clicked = true;
     }
 
-    public int GetChoice()
-    {
-        return choice;
-    }
-
     public T Choose<T>(T option1, T option2, T option3, T option4)
     {
 
