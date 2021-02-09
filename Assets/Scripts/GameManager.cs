@@ -2,50 +2,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public Charmander charmi;
-    public Pikachu pika;
-    public Bulbasaur bulba;
-    public Squirtle squirt;
-    public InputManager input;
-    private PokemonTypes chosen;
-    private bool pokemonChosen = false;
-
-    public enum PokemonTypes
+    private void OnEnable()
     {
-        Pikachu ,
-        Charmender,
-        Bulbasaur,
-        Squirtle
-
+        BattleSystem.Instance.OnBattleOver.AddListener(GameOver);
+    }
+    private void OnDisable()
+    {
+        BattleSystem.Instance.OnBattleOver.RemoveListener(GameOver);
     }
 
-    private void Start()
+    public void GameOver(BattleState _battleState)
     {
-        Debug.Log("choose pokemon");     
-    }
-
-    private void Update()
-    {
-        if (InputManager.clicked && !pokemonChosen) {
-            chosen = input.Choose(PokemonTypes.Pikachu, PokemonTypes.Charmender, PokemonTypes.Bulbasaur, PokemonTypes.Squirtle);
-            Debug.Log("you choose" + chosen);
-            pokemonChosen = true;
-            InputManager.clicked = false;
-            Debug.Log("choose attack");
-        } else if (InputManager.clicked) {
-            switch (chosen) {
-                case PokemonTypes.Bulbasaur: bulba.Bulba();break;
-                case PokemonTypes.Charmender: charmi.Charmie();break;
-                case PokemonTypes.Pikachu: pika.Pika();break;
-                case PokemonTypes.Squirtle: squirt.Squirt();break;
-                default: throw new ArgumentException("Incorrect Attack");
-            }
-            Debug.Log("choose attack");
-            InputManager.clicked = false;
+        if(_battleState == BattleState.WON)
+        {
+            GamePlayHUD.Instance.OnNarrativeTextUpdated.Invoke("YOU WON");
+            //ENDGAME
+        }
+        else if(_battleState == BattleState.LOST)
+        {
+            GamePlayHUD.Instance.OnNarrativeTextUpdated.Invoke("YOU LOST");
+            //ENDGAME
         }
 
+
     }
+
+    //based on states end game
+    // keep asking for attack? 
+    //in here?
 }
+
